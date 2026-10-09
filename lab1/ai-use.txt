@@ -1,0 +1,9 @@
+The AI tool used
+One or more prompts you used
+A brief explanation of how AI helped
+One example of a suggestion you tested, revised, or rejected
+
+1. The tool I used was Google Gemini
+2.
+3.
+4.
