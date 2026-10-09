@@ -3,7 +3,20 @@ One or more prompts you used
 A brief explanation of how AI helped
 One example of a suggestion you tested, revised, or rejected
 
-1. The tool I used was Google Gemini
-2.
-3.
-4.
+1. The tool I used was Google Gemini.
+
+2.One of the prompts that I used was: I am creating a responsive bootstrap grid on the request-form.html page. I am thinking of
+using the class="col-md-6" syntax to break up the course and date sections. Can you describe what each part of the syntax is doing?
+
+3.At first, the lab did not have the base code published, so I was heavily using the AI assistant to help write code and 
+explain its meaning. Then after obtaining the base code from the professor, I switched focus. The AI assitant was primarily 
+used to give suggestions of the syntax of specific html code and to answer questions about some of the base code functionality.
+ 
+4.One of the issues I ran into was making the request-form.html page to look uniform when on a dekstop and when on a mobile 
+version of the page. I had seen in the lecture how to change the columns for different form objects but didn't understand it 
+fully. I asked the AI assitant to explain the details of the class= "col-md-6" syntax. It clarified that the md indicates that
+the command only applies to large screens. Each section is split into 12 untis, so the -6 indicates for the column (col) to 
+take up half of the total space when in a larger width. This is applied to both the date label and the course label meaning 
+in a large view (like a desktop) the each column takes up half of the section. Then when seen in a smaller width view, the 
+rule does not apply and it stacks the sections making it more easily viewed. After applying that syntax, I verified in the 
+test web page and it functioned just as described. 
