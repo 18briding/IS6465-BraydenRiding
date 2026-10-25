@@ -1,0 +1,21 @@
+The AI tool used
+One or more prompts you used
+A brief explanation of how AI helped
+One example of a suggestion you tested, revised, or rejected
+
+
+1) The AI tool I used was Google Gemini
+
+2) The first prompt that I used was: "Based on these wireframes I've attached, (submitting the wireframes from HW2) create the base HTML 
+code that you would use on the following pages: login.php, card-list.php, card-details.php, card-add.php, and card-update.php. There does not
+need to save information yet, we just need the structure of the pages."
+
+3)I utilized the AI agent to build the base code for the web pages needed in the new Air Asia Gift Card award program. Once those pages were created
+I opened up a test terminal in the codespace and started poking around. This was to see visually how the web pages looked and to determine if they 
+were properly linking to one another. Once the intial testing was done, the web page needed a serious visual overhaul. I then utilized the AI tool to
+generate a CSS.styles sheet that allowed for easy user navigation and visibility. 
+
+4)When I used AI to help draft the CSS.styles sheet it did a great first draft. Howevever, there were a few visual details that did not work well 
+with the human eye. For example the buttons used to navigate the page were a dark red color that blended in with the text. This made it difficult to 
+read the text in the buttons which could leave users having a hard time knowing where to navigate. I kept the overall CSS.styles sheet but made some 
+adjustments to the colors used, the size of certain borders, and the text size of some elements.

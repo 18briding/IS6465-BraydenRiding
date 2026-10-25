@@ -29,6 +29,7 @@
             </div>
 
             <div class="form-actions">
+                <a href="card-list.php" class="btn">Back to List</a>
                 <!-- Link to Card Update Page -->
                 <a href="card-update.php" class="btn">Update Gift Card</a>
                 <!-- Non-functional placeholder delete link for workflow layout -->
