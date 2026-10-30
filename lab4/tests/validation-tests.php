@@ -1,5 +1,8 @@
 <?php
 require_once '../includes/validation.php';
+
+
+//test validatePreferredTime
 $tests = [
     ['name' => 'Valid time', 'input' => 'Morning', 'expected' => ''],
     ['name' => 'Missing time', 'input' => '', 'expected' => 'Choose a valid preferred time.'],
@@ -12,6 +15,8 @@ foreach ($tests as $test) {
     echo $passed ? 'PASS' : 'FAIL';
     echo '</p>';
 }
+
+//test validateTopics
 $topicTests = [
     [
         'name' => 'Multiple valid topics',
@@ -38,6 +43,9 @@ foreach ($topicTests as $test) {
     echo $passed ? 'PASS' : 'FAIL';
     echo '</p>';
 }
+
+
+//test validateReason
 $reasonTests = [
     [
         'name' => 'Minimum length',
