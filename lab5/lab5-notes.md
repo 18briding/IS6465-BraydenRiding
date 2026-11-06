@@ -29,7 +29,7 @@ Part 3
             join students AS s ON r.student_id = s.student_id
             order by r.preferred_date;
 
-    (output) *NOTE* since the queries are run on the tutoring.sql page there are many duplicate tutoring request entires, Professor Chong Oh said not to worry about this in the lecture
+    (output) *NOTE* since the queries are run on the tutoring.sql page there are many duplicate tutoring request entires, in the lecture video Professor Chong Oh said not to worry about the duplicates.
 
             1|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms - updated|2026-10-12|15:00|Cancelled
             3|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
@@ -77,23 +77,54 @@ Part 3
 
 Part 4
     1.
-    2.
-    3.
-    4.
-    5.
+    -- (update one of Jordan's requests)
+
+            UPDATE tutoring_requests
+            SET topic = 'Talking about CATS now',
+                preferred_date = '2030-10-12',
+            WHERE request_id = 12;
+
+    -- (change Avery's request to cancelled)
+
+            UPDATE tutoring_requests
+            SET status = 'Cancelled'
+            WHERE request_id = 14;
+
+    2. part4.2 in images folder
+
+    3. part4.2 in images folder
+
+    4. The WHERE clause is essential in an UPDATE statement because it specifies which row / entry you actually want to edit. If you run an UPDATE statement without a WHERE clause it will apply that change to every entry in the table. The amount of data correction needed to resolve the issue would be enormous.
+
+    5. The Peer Tutoring Hub utilizies a cancelled status rather than deleting requests in order to maintain an audit trail. It is important in most cases to have evidence that a tutoring request was made in the first place. If  were to use a delete instead of an update (to cancelled status) then there would be no evidence that the tutoring request was ever made.
 
 Part 5
     1.
+        INSERT OR ignore INTO tutoring_requests
+            (student_id, course, topic, preferred_date, preferred_time)
+        VALUES
+            (2, 'IS 6465', 'FAKE request for DELETION', '2026-11-15', '10:00');
+
     2.
-    3.
-    4.
+        DELETE from tutoring_requests
+        WHERE request_id = 51;
+
+
+    3. part5.3 in images folder
+
+    4.The WHERE clause in a DELETE statement is essential because it ensures that you are deleting the correct record / entry. Withtout the WHERE clause is dangerous because it will result in deltion of everything in the specified table. This could be catastrophic for an organization.
+    
 
 
 Part 6
     Table:
+
     1.
+
     2.
+
     3.
+
     4.
     
 

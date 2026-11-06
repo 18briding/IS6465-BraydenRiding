@@ -120,3 +120,32 @@ join students AS s ON r.student_id = s.student_id
 order by r.preferred_date;
 
 
+--4.1 (update one of Jordan's requests)
+
+UPDATE tutoring_requests
+SET topic = 'Talking about CATS now',
+    preferred_date = '2030-10-12'
+WHERE request_id = 12;
+
+--4.2 (change Avery's request to cancelled)
+
+UPDATE tutoring_requests
+SET status = 'Cancelled'
+WHERE request_id = 14;
+
+
+
+--5.1 (creating a fake request for deletion)
+INSERT OR ignore INTO tutoring_requests
+  (student_id, course, topic, preferred_date, preferred_time)
+VALUES
+  (2, 'IS 6465', 'FAKE request for DELETION', '2026-11-15', '10:00');
+
+
+--5.2 (deleting the fake request)
+
+DELETE from tutoring_requests
+WHERE request_id = 51;
+
+-- verifying that fake request has been deleted
+select * from tutoring_requests;
