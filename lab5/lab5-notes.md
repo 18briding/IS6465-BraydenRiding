@@ -27,47 +27,17 @@ Part 3
             r.status
             from tutoring_requests AS r
             join students AS s ON r.student_id = s.student_id
+            where r.requests_id IN (1, 12, 13, 18)
             order by r.preferred_date;
 
-    (output) *NOTE* since the queries are run on the tutoring.sql page there are many duplicate tutoring request entires, in the lecture video Professor Chong Oh said not to worry about the duplicates.
+*NOTE* since "sqlite3 tutoring.db < tutoring.sql" is used to commit changed, it runs the commands every time the change is committed. This results in many duplicate tutoring request entires. Therefore I modified the query to only include the relevant non duplicate entries. (Also why youll notice that the request_ids are not sequential 1,2,3,4)
 
-            1|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms - updated|2026-10-12|15:00|Cancelled
-            3|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            4|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            5|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            6|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            7|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            8|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            9|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            10|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            11|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            15|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            19|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            23|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            27|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            31|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            35|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms|2026-11-03|14:00|Open
-            12|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            16|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            20|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            24|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            28|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            32|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            36|Jordan Lee|jordan.lee@example.com|IS 6465|Forms|2026-11-09|18:00|Open
-            14|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
+     (output)
+
+             1|Maria Lopez|maria.lopez@example.com|IS 6465|PHP arrays and forms - updated|2026-10-12|15:00|Cancelled
             18|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
-            22|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
-            26|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
-            30|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
-            34|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
-            38|Avery Patel|avery.patel@example.com|IS 6465|SQLite CRUD|2026-11-10|12:00|Open
             13|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            17|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            21|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            25|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            29|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            33|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
-            37|Jordan Lee|jordan.lee@example.com|IS 6465|SQL SELECT|2026-11-12|16:00|Open
+            12|Jordan Lee|jordan.lee@example.com|IS 6465|Talking about CATS now|2030-10-12|18:00|Open
 
     1. The JOIN condition connects two tables together. In this case it was the connection between the students and the tutoring_request table. It specifically connected the tables by matching the student_id primary key in the students table to the student_id foreign key in the tutoring_request table.
 
@@ -117,14 +87,14 @@ Part 5
 
 
 Part 6
-    Table:
+    Table: part6.1 in images folder
 
-    1.
+    1. The database preservers a connection between the student and the students request by using the student_id primary key and foreign key pair. The student_id column is the primary key of the students table. The student_id column is a foreign key in the tutoring_request table which references to the student_id found in the students column (therefore connecting the tables).
 
-    2.
+    2. The constraint that prevents two students from having the same email in the students table is the UNIQUE parameters specified for student email. This requires that every entry in email column is unqiue (therfore no student email can be repeated).
 
-    3.
+    3. The WHERE clause in the UPDATE or DELETE command is crucial or else the UPDATE or DELETE would apply to the entire table rather than a single entry in the table. In both scenarios is basically ends with an entire table of data being erased or changed to an incorrect value. This could create catastrophic issues for the web application that is utilziing that database.
 
-    4.
+    4. PHP should send values from an HTML form as parameters to prevent against attacks such as SQL injection. If PHP instead placed those values directly into SQL text, a malicious outsider could potentially upload an UPDATE or DELETE SQL command and wipe out the availability / integrity of a web application. This is why layering security with input validation at the form level is also important.
     
 
