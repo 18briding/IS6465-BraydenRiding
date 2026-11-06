@@ -1,3 +1,6 @@
+
+-- Part 1 creating the db tables
+
 CREATE TABLE if not exists students (
   student_id INTEGER PRIMARY KEY,
   student_name TEXT NOT NULL,
@@ -55,3 +58,65 @@ SET status = 'Cancelled'
 WHERE request_id = 1;
 
 select * from tutoring_requests;
+
+-- *NOTE* the above code was used to follow along in the lecture video
+
+-- Part 2 inserting new entries to the student table and the tutoring_request table
+
+
+INSERT OR ignore INTO students (student_name, student_email)
+VALUES ('Jordan Lee', 'jordan.lee@example.com');
+
+INSERT OR ignore INTO students (student_name, student_email)
+VALUES ('Avery Patel', 'avery.patel@example.com');
+
+INSERT OR ignore INTO tutoring_requests
+  (student_id, course, topic, preferred_date, preferred_time)
+VALUES
+  (2, 'IS 6465', 'Forms', '2026-11-09', '18:00');
+
+INSERT OR ignore INTO tutoring_requests
+  (student_id, course, topic, preferred_date, preferred_time)
+VALUES
+  (2, 'IS 6465', 'SQL SELECT', '2026-11-12', '16:00');
+
+INSERT OR ignore INTO tutoring_requests
+  (student_id, course, topic, preferred_date, preferred_time)
+VALUES
+  (3, 'IS 6465', 'SQLite CRUD', '2026-11-10', '12:00');
+
+
+select * from students;
+select * from tutoring_requests;
+
+-- Part 3 Read the stored data
+
+--3.1
+select * from students;
+
+--3.2 
+select * from tutoring_requests;
+
+--3.3
+select * from tutoring_requests
+where status = 'Open';
+
+--3.4
+select * from tutoring_requests
+where request_id = 3;
+
+--3.5
+select 
+  r.request_id,
+  s.student_name,
+  s.student_email,
+  r.course, 
+  r.topic,
+  r.preferred_date, 
+  r.preferred_time, 
+  r.status
+from tutoring_requests AS r
+join students AS s ON r.student_id = s.student_id
+order by r.preferred_date;
+
+
