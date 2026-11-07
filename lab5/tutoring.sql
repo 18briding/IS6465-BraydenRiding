@@ -19,6 +19,8 @@ CREATE TABLE if not exists tutoring_requests (
   FOREIGN KEY (student_id) REFERENCES students(student_id)
 );
 
+-- *NOTE* the below section was used to follow along during the lecture video
+
 INSERT OR ignore INTO students (student_name, student_email)
 VALUES ('Maria Lopez', 'maria.lopez@example.com');
 
