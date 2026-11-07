@@ -1,12 +1,17 @@
 Part 1
+  
     1. part1.1 in images folder
+![Output of both tables](images/part1.1.png)
+
     2. In the students table primary key = student_id
         In the tutoring_request table primary key= request_id
     3. The foreign is found in the tutoring_request table and it is the student_id. A foreign key is a column that originates from a different table but can also be found in a different table in a database. This helps link / connect two different tables together.
     4. The student_email column is marked as unique because we want to ensure that no two rows in the student table have the same email address. This would cause confusion in the application and when replying to students (manually or automated).
 
 Part 2
+  
     1. part2.1 in images folder
+![Statements used to insert tutor requests](images/part2.1.png)
 
     2. select * from students;
         select * from tutoring_requests;
@@ -15,6 +20,7 @@ Part 2
 
 
 Part 3
+   
     (query)
             select 
             r.request_id,
@@ -46,6 +52,7 @@ Part 3
     3.The reason to retreive a request based on request_id versus topic only simply comes down to specificity. If we used topic when trying to retreive a singluar request, potentially hundreds of results could populate. If we use request_id, only one tutoring request will populate because every request has a unique request_id.
 
 Part 4
+ 
     1.
     -- (update one of Jordan's requests)
 
@@ -62,13 +69,18 @@ Part 4
 
     2. part4.2 in images folder
 
+![Updating a request](images/part4.2.png)
+
     3. part4.2 in images folder
+
+![Updating a request](images/part4.2.png)
 
     4. The WHERE clause is essential in an UPDATE statement because it specifies which row / entry you actually want to edit. If you run an UPDATE statement without a WHERE clause it will apply that change to every entry in the table. The amount of data correction needed to resolve the issue would be enormous.
 
     5. The Peer Tutoring Hub utilizies a cancelled status rather than deleting requests in order to maintain an audit trail. It is important in most cases to have evidence that a tutoring request was made in the first place. If  were to use a delete instead of an update (to cancelled status) then there would be no evidence that the tutoring request was ever made.
 
 Part 5
+    
     1.
         INSERT OR ignore INTO tutoring_requests
             (student_id, course, topic, preferred_date, preferred_time)
@@ -82,12 +94,17 @@ Part 5
 
     3. part5.3 in images folder
 
+![Removed request](images/part5.3.png)
+
     4.The WHERE clause in a DELETE statement is essential because it ensures that you are deleting the correct record / entry. Withtout the WHERE clause is dangerous because it will result in deltion of everything in the specified table. This could be catastrophic for an organization.
     
 
 
 Part 6
+   
     Table: part6.1 in images folder
+
+![CRUD table](images/part6.1.png)
 
     1. The database preservers a connection between the student and the students request by using the student_id primary key and foreign key pair. The student_id column is the primary key of the students table. The student_id column is a foreign key in the tutoring_request table which references to the student_id found in the students column (therefore connecting the tables).
 
