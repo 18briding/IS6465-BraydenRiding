@@ -36,7 +36,7 @@ Part 3
             where r.requests_id IN (1, 12, 13, 18)
             order by r.preferred_date;
 
-*NOTE* since "sqlite3 tutoring.db < tutoring.sql" is used to commit changed, it runs the commands every time the change is committed. This results in many duplicate tutoring request entires. Therefore I modified the query to only include the relevant non duplicate entries. (Also why youll notice that the request_ids are not sequential 1,2,3,4)
+*NOTE* since "sqlite3 tutoring.db < tutoring.sql" is used to commit changed, it runs all of the previously written commands in the tutoring.sql file every time a new change is committed. This results in many duplicate tutoring request entires. Therefore I modified the query to only include the relevant non duplicate entries. (Also why you will notice that the request_ids are not sequential 1,2,3,4)
 
      (output)
 
