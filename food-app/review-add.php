@@ -15,17 +15,28 @@
     <h2>Write a Review</h2>
     
     <form action="reviews.php" method="POST" style="margin-top: 1.5rem;">
-      <div class="form-group">
+        
+    <div class="form-group">
+        <label for="restName">Restaurant</label>
+        <select id="restName" name="rest_name" required>
+          <option value="">Select restaurnant</option>
+          <option value="1">Island Grill</option>
+          <option value="2">Ocean Cafe</option>
+          <option value="3">Mountain Eats</option>
+        </select>
+      </div>
+    
+    <div class="form-group">
         <label for="foodItem">Food Name</label>
         <select id="foodItem" name="food_id" required>
           <option value="">Select food item</option>
-          <option value="1">Garlic Shrimp - Island Grill</option>
-          <option value="2">Chicken Katsu - Ocean Cafe</option>
-          <option value="3">Cheeseburger - Mountain Eats</option>
+          <option value="1">Garlic Shrimp</option>
+          <option value="2">Chicken Katsu</option>
+          <option value="3">Cheeseburger</option>
         </select>
       </div>
 
-      <div class="form-group">
+    <div class="form-group">
         <label for="rating">Your Rating</label>
         <select id="rating" name="rating" required>
           <option value="5">5 / 5</option>

@@ -18,6 +18,7 @@
     <section style="margin-top: 2rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
         <h3>Available Food Items</h3>
+        <a href="review-add.php" class="btn">+ Write a Review</a>
       </div>
       <table>
         <thead>
@@ -32,7 +33,7 @@
         <tbody>
           <tr style="cursor: pointer;" onclick="window.location.href='food-detail.php'">
             <td>
-              <a href="food-detail.php" style="text-decoration: none; color: inherit; font-weight: 600;">
+              <a href="food-detail.php" style="text-decoration: underline; color: var(--primary-color); font-weight: 600;">
                 Garlic Shrimp
               </a>
             </td>
@@ -46,7 +47,7 @@
           </tr>
           <tr style="cursor: pointer;" onclick="window.location.href='food-detail.php'">
             <td>
-              <a href="food-detail.php" style="text-decoration: none; color: inherit; font-weight: 600;">
+              <a href="food-detail.php" style="text-decoration:  underline; color: var(--primary-color); font-weight: 600;">
                 Chicken Katsu
               </a>
             </td>

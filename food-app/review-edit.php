@@ -38,7 +38,7 @@
 
       <div class="actions" style="margin-top: 2rem;">
         <button type="submit" class="btn">Save Changes</button>
-        <a href="reviews.php" class="btn btn-secondary">Cancel</a>
+        <a href="myreviews.php" class="btn btn-secondary">Cancel</a>
       </div>
     </form>
   </main>
