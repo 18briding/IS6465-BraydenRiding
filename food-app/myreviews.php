@@ -3,7 +3,6 @@
   <main class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
       <h2>Food Reviews</h2>
-      <a href="review-add.php" class="btn">+ Write a Review</a>
     </div>
 
     <div class="card" style="margin-bottom: 1rem;">
