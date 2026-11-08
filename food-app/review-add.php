@@ -54,7 +54,7 @@
 
       <div class="actions" style="margin-top: 2rem;">
         <button type="submit" class="btn">Submit Review</button>
-        <a href="food-detail.php" class="btn btn-secondary">Cancel</a>
+        <a href="restaurant-detail.php" class="btn btn-secondary">Cancel</a>
       </div>
     </form>
   </main>

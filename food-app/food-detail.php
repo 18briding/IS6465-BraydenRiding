@@ -12,16 +12,15 @@
           <p style="margin-top: 0.5rem;">Description: Garlic Shrimp with Butter</p>
           <p style="margin-top: 0.3rem;">Average Rating: <strong>4.9 / 5</strong></p>
         </div>
-        <div>
-          <a href="review-add.php" class="btn">+ Write a Review for this Item</a>
-        </div>
       </div>
     </div>
 
     <!-- Section: Reviews for this Food Item -->
     <section style="margin-top: 3rem;">
-      <h3>Reviews for Garlic Shrimp</h3>
-
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <h3>Reviews for Garlic Shrimp</h3> 
+      <a href="review-add.php" class="btn">+ Write a Review</a>
+      </div>  
       <div class="card" style="margin-top: 1rem;">
         <div style="display: flex; justify-content: space-between;">
           <strong>Sarah Brown</strong>

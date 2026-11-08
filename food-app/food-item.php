@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Items - FoodieFind</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header>
-    <a href="home.php" class="logo">FoodieFind</a>
-    <nav>
-      <a href="home.php">Home</a>
-      <a href="food-items.php">Food Items</a>
-      <a href="reviews.php">Reviews</a>
-      <a href="login.php">Logout</a>
-    </nav>
-  </header>
+<?php require_once 'includes/header.php'; ?>
 
   <main class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
@@ -70,4 +53,5 @@
     </table>
   </main>
 </body>
-</html>
+
+<?php require_once 'includes/footer.php'; ?>
