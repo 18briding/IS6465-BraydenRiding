@@ -18,16 +18,16 @@ PART 2
     2) After pressing submit I was taken to a page with a title of "Request 2." There is also an option to edit or cancel this request. To confirm that the request submitted, I clicked on the "Requests" link in the header which took me to a list of all requests. Two requests were present, the first one from Maria Lopez in the setup code we ran and this one. 
 
     3)part2.3.png in the images folder
-    ![Submission Proof](images/part2.3.png)
-
-
-
-
-
+![Submission Proof](images/part2.3.png)
 
 PART 3
+
 PART 4
+
 PART 5
+
 PART 6
+
 PART 7
+
 
