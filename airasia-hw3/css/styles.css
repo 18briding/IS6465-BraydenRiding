@@ -1,0 +1,168 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Banner & Navigation (Flexbox Row) */
+.site-header {
+    background-color: #b71c1c; /* AirAsia Deep Red */
+    color: #ffffff;
+    width: 100%;
+    padding: 18px 40px;
+    border-bottom: 4px solid #8e0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.site-header .brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.site-nav a.nav-btn {
+    background-color: #ffffff;
+    color: #b71c1c;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+
+.site-nav a.nav-btn:hover {
+    background-color: #8e0000;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Main Content Area */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid #b71c1c;
+    border-radius: 8px;
+    flex: 1;
+}
+
+h1, h2, h3 {
+    color: #b71c1c;
+    margin-bottom: 16px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Gift Card Grid (card-list.php) */
+.card-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card-item {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 240px;
+    text-align: center;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-3px);
+}
+
+.card-item h3 a {
+    color: #b71c1c;
+    text-decoration: none;
+}
+
+.card-item img {
+    max-width: 160px;
+    height: 100px;
+    object-fit: contain;
+    margin: 12px 0;
+    border: 1px solid #eeeeee;
+    padding: 8px;
+    background: #ffffff;
+}
+
+/* Forms & Buttons (card-add.php, card-update.php, login.php) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #b71c1c;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #8e0000;
+}
+
+/* Shared Footer */
+.site-footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
