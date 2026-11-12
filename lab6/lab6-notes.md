@@ -22,7 +22,19 @@ PART 2
 
 PART 3
 
+    1)part3.1.png in the images folder
+![Submission Proof](images/part3.1.png)
+
 PART 4
+    1) request-form.php
+    2) process-request.php
+    3) db.php 
+    4)requestService.php
+    5) studentPDO.php / requestPDO.php
+    6) students
+    7) tutoring_requests
+    8) A tutoring request connects to the student who submitted it via the student_id column. This is a primary key in the students table and a foreign key in the tutoring_request table. 
+    9) ** 2-4 sentences at the end **
 
 PART 5
 
