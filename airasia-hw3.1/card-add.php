@@ -11,6 +11,12 @@ $result = handleAddGiftCard($pdo);
 $errors = $result['errors'];
 $data   = $result['data'];
 
+// Extract variables from the $data array so the form fields and dropdowns work properly
+$cardName  = $data['cardName'];
+$cardType  = $data['cardType'];
+$cardValue = $data['cardValue'];
+$points    = $data['points'];
+
 // Include shared header and navigation templates
 require_once 'includes/header.php';
 require_once 'includes/nav.php';
