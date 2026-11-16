@@ -1,0 +1,35 @@
+The AI tool or tools used
+The prompt or prompts you used
+A brief explanation of how AI supported your work
+One AI suggestion you tested, revised, or rejected
+A brief explanation of how you verified the final code and database behavior
+
+
+1) The AI tool I used was Google Gemini
+
+2) I first attached the AirAsia Requirments document and then a PDF that included the AirAsia-HW3 Instructions to a notebook in Gemini.
+The initial prompt that I used start was: 
+"I have just attached a zip file containing my current web application. The goal for this week is to add PHP/SQL integration into this application so it can actually interact with a database.
+In the sources of this notebook I have included 2 documents. One contains the overall project requirements. This is the authoritative source for table names, column names, attributes and business rules. The other document is the specific requirements for this portion of the project (the php / sql integration).
+I have already completed part 2 which is creating reusable templates using the header, nav, and footer files.
+I would now like your help creating the SQL database. For now, lets start up with part 1 which is the database setup.
+Create a SQLite database named rewards.db.
+Use the AirAsia Requirements Document to create the required ACCOUNT and GIFTCARD tables. Use the exact required table names, column names, and attributes. Ensure that a schema.sql file is created for table creation and a seed.sql file is used to insert entries into the tables. 
+I will need to insert 5 entries into the account table and 20 entries into the giftcard table."
+
+3) After this initial prompt I used subsequent prompts to walk through the other steps of part 3-8. 
+I primarily used the AI to generate the intital code for the pages and then ask questions about whether the code and workflow supports the use cases and business requirements. 
+
+4) One of the suggestions that the AI engine provided was to include a section in the card-list.php and card-detail.php page that would match card names with a particular image in my images folder. 
+I initially rejectetd this idea because it creates an issue where newly added giftcards may not properly connected to the correct image (because a new line of code would have to be added for every giftcard with a name not already included in the code.)
+I had then decided that in order to elinimate this issue I would need to add an image column to the GIFTCARD table so each giftcard row would have a unique picture associated to it. 
+However, upon reviewing the requirement documentation it is stated: "The AirAsia Requirements Document is the authoritative source for table names, column names, attributes, and business rules. Follow it if it conflicts with any general example in this assignment."
+The ERD in the AirAisia requirments document does NOT contain an images row, therefore I decided against adding one. 
+Therefore after careful consideration I ultimately accepted the AI's suggestion to stay within the assignemnt requirments, (although in a real world application this would create issues repeatability).
+
+5) The main way that I verified my final code and database behavior was by walking through different workflows to ensure that all of the the use cases worked as expeted.
+Part 8 of the assignment helps outline this workflow in a table. I made sure that a user can view a list of giftcards that are all present in the database.
+Then I ensured that when clicking on a specific giftcard, I am taken to a page that gives the details for that specific gift card.
+Then I tested the functions of updating an existing giftcard and then deleting an exisiting giftcard.
+ When walking through I ran SQL queries to ensure that the correct entries in the Giftcard table were updated.
+
