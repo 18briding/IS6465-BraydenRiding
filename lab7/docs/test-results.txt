@@ -1,0 +1,236 @@
+=== Lab 4 validation (tests/validation-tests.php)
+Results: 10 passed, 0 failed
+=== UC01/UC02 regression (tests/integration-tests.php)
+PASS: UC01 create and Open
+PASS: Lab 4 checkbox values preserved
+PASS: Duplicate email reuses student
+PASS: UC02 course and status filter
+PASS: Invalid reason rejected
+PASS: Invalid submission writes nothing
+PASS: Edit Open request
+PASS: Updated reason persisted
+PASS: Cancel Open request
+PASS: Cancelled row retained
+PASS: Second cancellation rejected
+PASS: Unrelated request unchanged
+PASS: FK enforced
+PASS: UC02 empty filter result
+Results: 14 passed, 0 failed
+=== UM-01..UM-09 services (tests/user-management-tests.php)
+== UM-01 Create User Account ==
+PASS: UM-01-T01 Student registration creates an Active Student user
+PASS: UM-01-T02 Only a password hash is stored (not plaintext)
+PASS: UM-01-T03 Student account is linked to a students row (user_id FK)
+PASS: UM-01-T04 Tutor registration creates an Active Tutor user
+PASS: UM-01-T05 Tutor registration creates no students row
+PASS: UM-01-T06 Duplicate email is rejected
+PASS: UM-01-T07 Duplicate email is rejected regardless of case/whitespace
+PASS: UM-01-T08 Duplicate attempts add no users
+PASS: UM-01-T09 Registering as Administrator is denied
+PASS: UM-01-T10 Denied Administrator registration changes nothing
+PASS: UM-01-T11 Missing role is a validation error
+PASS: UM-01-T12 Unknown role is a validation error
+PASS: UM-01-T13 Password/confirmation mismatch is rejected
+PASS: UM-01-T14 Password shorter than 8 characters is rejected
+PASS: UM-01-T15 Invalid email is rejected
+PASS: UM-01-T16 Blank name is rejected
+PASS: UM-01-T17 Rejected registrations leave no user row
+PASS: UM-01-T18 Quotes and markup in the name are stored verbatim (encoded only on output)
+PASS: UM-01-T19 Registering adopts an existing unlinked student row and keeps its requests
+PASS: UM-01-T20 Failure after the user insert rolls back (no partial write)
+== UM-02 View Own Account ==
+PASS: UM-02-T01 Own profile shows name, email, role and status
+PASS: UM-02-T02 Profile data never includes the password hash
+PASS: UM-02-T03 Each user sees only their own record
+PASS: UM-02-T04 A Student cannot open another user's account
+PASS: UM-02-T05 Unknown/expired identity is denied
+PASS: UM-02-T06 Missing identity is denied
+== UM-03 View and Search User Accounts ==
+PASS: UM-03-T01 Admin with no criteria sees all accounts
+PASS: UM-03-T02 Search by name fragment returns matching account
+PASS: UM-03-T03 Search by email fragment returns matching account
+PASS: UM-03-T04 Role filter returns only that role (Taylor, Sam)
+PASS: UM-03-T05 Status filter with no matches returns an empty list
+PASS: UM-03-T06 Combined search+role+status filters (Alex, Jordan, Maria)
+PASS: UM-03-T07 No matches returns an empty result
+PASS: UM-03-T08 A literal % does not act as a wildcard
+PASS: UM-03-T09 SQL injection text is treated as data
+PASS: UM-03-T10 Student cannot search accounts (unauthorized denied)
+PASS: UM-03-T10 Tutor cannot search accounts (unauthorized denied)
+PASS: UM-03-T11 Invalid role filter is rejected
+PASS: UM-03-T12 Search results never include password hashes
+PASS: UM-03-T13 Account details include the related request count
+PASS: UM-03-T14 Unknown account id is Not Found
+== UM-04 Update Own Account ==
+PASS: UM-04-T01 Name and email update succeeds (email normalized)
+PASS: UM-04-T02 The linked students row is kept in step
+PASS: UM-04-T03 No other account changed
+PASS: UM-04-T04 Role modification through the profile is denied
+PASS: UM-04-T05 Role is unchanged after the denied attempt
+PASS: UM-04-T06 Status modification through the profile is denied
+PASS: UM-04-T07 Duplicate email is rejected and nothing changes
+PASS: UM-04-T08 Invalid email is rejected
+PASS: UM-04-T09 Blank name is rejected
+PASS: UM-04-T10 Re-saving your own current email is not a duplicate
+PASS: UM-04-T11 Update without a valid identity is denied
+== UM-05 Change Password ==
+PASS: UM-05-T01 Correct current password and valid new password succeeds
+PASS: UM-05-T02 The new password works for login
+PASS: UM-05-T03 The old password no longer works
+PASS: UM-05-T04 A new hash (not plaintext) is stored
+PASS: UM-05-T05 Incorrect current password is rejected, hash unchanged
+PASS: UM-05-T06 New/confirm mismatch is rejected, hash unchanged
+PASS: UM-05-T07 A too-short new password is rejected
+PASS: UM-05-T08 Another user's password is unaffected
+== UM-06 Update User Role ==
+PASS: UM-06-T01 Admin changes Tutor to Student (and a students row exists)
+PASS: UM-06-T02 Admin changes Student back to Tutor (students row and history retained)
+PASS: UM-06-T03 A Student cannot change a role (unauthorized change denied)
+PASS: UM-06-T04 A Student cannot promote themselves
+PASS: UM-06-T05 A Tutor cannot promote themselves
+PASS: UM-06-T06 Denied attempts changed no roles
+PASS: UM-06-T07 An unconfirmed change is not applied
+PASS: UM-06-T08 An unknown role value is rejected
+PASS: UM-06-T09 Setting the role it already has is a prohibited no-op
+PASS: UM-06-T10 The last active administrator cannot be demoted
+PASS: UM-06-T11 Unknown account is Not Found
+PASS: UM-06-T12 Admin can promote a user to Administrator
+PASS: UM-06-T13 With two active administrators one may be demoted
+PASS: UM-06-T14 An inactive actor is denied (fresh status check)
+== UM-07 Activate or Deactivate Account ==
+PASS: UM-07-T01 Admin deactivates an account
+PASS: UM-07-T02 An inactive user cannot log in
+PASS: UM-07-T03 An inactive user's existing identity is refused by the services
+PASS: UM-07-T04 Reactivation restores login
+PASS: UM-07-T05 A non-administrator cannot change status
+PASS: UM-07-T06 Activating an Active account is an invalid transition
+PASS: UM-07-T07 An unknown status value is rejected
+PASS: UM-07-T08 An unconfirmed status change is not applied
+PASS: UM-07-T09 The last active administrator cannot be deactivated
+PASS: UM-07-T10 Unknown account is Not Found
+== UM-08 Delete User Account ==
+PASS: UM-08-T01 Deletion is blocked when the account has tutoring requests
+PASS: UM-08-T02 Blocked deletion removes no user, student or request rows
+PASS: UM-08-T03 An unconfirmed (cancelled) deletion changes nothing
+PASS: UM-08-T04 A non-administrator cannot delete accounts
+PASS: UM-08-T05 An administrator cannot delete their own account
+PASS: UM-08-T06 An account with no related requests can be deleted
+PASS: UM-08-T07 The empty students row goes with it; no requests are removed
+PASS: UM-08-T08 A Tutor account with no records can be deleted
+PASS: UM-08-T09 Unrelated accounts are unchanged
+PASS: UM-08-T10 Deleting an unknown account is Not Found
+PASS: UM-08-T11 An inactive administrator cannot act, so cannot delete the last active admin
+PASS: UM-08-T12 A second administrator can be deleted while another active one remains
+PASS: UM-08-T13 Foreign key prevents orphaning students.user_id
+== UM-09 Log In (credential verification) ==
+PASS: UM-09-T01 Valid credentials return the account
+PASS: UM-09-T02 The returned account has no password hash
+PASS: UM-09-T03 Wrong password is rejected
+PASS: UM-09-T04 Unknown email is rejected
+PASS: UM-09-T05 Email matching ignores case and whitespace
+PASS: UM-09-T06 Inactive account cannot log in even with the right password
+PASS: UM-09-T07 SQL injection in credentials does not authenticate
+PASS: UM-09-T08 An empty password is rejected
+PASS: UM-09-T09 A weaker legacy hash is upgraded after a successful login
+Results: 106 passed, 0 failed
+=== Database upgrade (tests/migration-tests.php)
+PASS: MIG-01 init-db upgrades a Lab 6 database without error
+PASS: MIG-02 users table and students.user_id now exist
+PASS: MIG-03 Existing students and requests are preserved
+PASS: MIG-04 Running init-db again is a safe no-op
+PASS: MIG-05 students.user_id is unique after the upgrade (one account per student row)
+Results: 5 passed, 0 failed
+=== UM-01..UM-10 over HTTP (tests/http-tests.php)
+== UM-09 Log In ==
+PASS: UM-09-H01 Login page shows email and password fields
+PASS: UM-09-H02 Session cookie is HttpOnly and SameSite=Lax
+PASS: UM-09-H03 Login POST without a CSRF token is refused
+PASS: UM-09-H04 Wrong password shows the generic error
+PASS: UM-09-H05 Unknown email shows the same generic error
+PASS: UM-09-H06 Failed logins do not create an authenticated session
+PASS: UM-09-H07 Valid login redirects to the dashboard
+PASS: UM-09-H08 Session ID is regenerated at login (fixation defense)
+PASS: UM-09-H09 Dashboard shows the signed-in user
+PASS: UM-09-H10 The pre-login session ID grants no access
+PASS: UM-09-H11 Inactive account is refused with the same generic message
+== UM-02 View Own Account ==
+PASS: UM-02-H01 Profile shows own name, email, role and status
+PASS: UM-02-H02 A user_id parameter cannot reveal another user's profile
+PASS: UM-02-H03 No password hash appears on the profile page
+PASS: UM-02-H04 Anonymous visitor is redirected to login
+== UM-01 Create User Account ==
+PASS: UM-01-H01 Registration form offers only Student and Tutor
+PASS: UM-01-H02 Valid registration shows a confirmation
+PASS: UM-01-H03 The new account can log in immediately
+PASS: UM-01-H04 Forged Administrator registration is denied and creates nothing
+PASS: UM-01-H05 Duplicate email shows a correction message
+PASS: UM-01-H06 Submitted text is HTML-encoded when redisplayed
+PASS: UM-01-H07 Registration without a CSRF token is refused
+== UM-04 Update Own Account / UM-05 Change Password ==
+PASS: UM-04-H01 Name update is saved and shown
+PASS: UM-04-H02 Posting role=Administrator is denied and role is unchanged
+PASS: UM-04-H03 Duplicate email is rejected, email unchanged
+PASS: UM-04-H04 Profile update without CSRF token is refused
+PASS: UM-05-H01 Wrong current password is rejected with a message
+PASS: UM-05-H02 Correct current password changes the password
+== UM-10 Log Out ==
+PASS: UM-10-H01 Logout by GET is refused (POST only)
+PASS: UM-10-H02 Logout without CSRF token is refused
+PASS: UM-10-H03 Logout redirects to the login page
+PASS: UM-10-H04 The authentication cookie is expired by the response
+PASS: UM-10-H05 Protected page is denied after logout
+PASS: UM-10-H06 Replaying the old session cookie is denied (server-side session destroyed)
+PASS: UM-05-H03 The old password no longer works after the change
+PASS: UM-05-H04 The new password works
+PASS: UM-10-H07 Logging out with an already-expired session redirects to login
+== UM-03 / UM-06 / UM-07 / UM-08 Administrator pages ==
+PASS: UM-03-H01 A Student is denied Manage Users
+PASS: UM-03-H02 A Tutor is denied Manage Users
+PASS: UM-03-H03 An anonymous visitor is redirected to login
+PASS: UM-03-H04 Administrator sees the account list
+PASS: UM-03-H05 Search and filters narrow the list
+PASS: UM-03-H06 No matches shows an empty-state message
+PASS: UM-03-H07 An invalid role filter is rejected
+PASS: UM-03-H08 Administrator can open an account's details
+PASS: UM-03-H09 A Student cannot open account details
+PASS: UM-06-H01 Role change without CSRF token is refused
+PASS: UM-06-H02 A Student POSTing a role change is denied and nothing changes
+PASS: UM-06-H03 A role change without confirmation is not applied
+PASS: UM-06-H04 Administrator changes a role
+PASS: UM-06-H05 Demoting the last active administrator returns Conflict
+PASS: UM-07-H01 A Student cannot deactivate accounts
+PASS: UM-07-H02 Priya is signed in before deactivation
+PASS: UM-07-H03 Administrator deactivates Priya
+PASS: UM-07-H04 Her already-open session is ended on the next request
+PASS: UM-07-H05 The inactive user cannot log in again
+PASS: UM-07-H06 Reactivated user can log in
+PASS: UM-08-H01 Delete confirmation warns about related tutoring requests
+PASS: UM-08-H02 Deleting an account with requests is blocked; nothing removed
+PASS: UM-08-H03 Deletion without confirmation changes nothing
+PASS: UM-08-H04 A Student cannot delete accounts
+PASS: UM-08-H05 Delete without CSRF token is refused
+PASS: UM-08-H06 An account with no related records is deleted after confirmation
+PASS: UM-08-H07 Deleting an unknown account shows Not Found
+== Tutoring pages: login, role and ownership guards (integration with UC01/UC02) ==
+PASS: AUTH-H01 Request pages require login
+PASS: AUTH-H02 Student sees the Lab 4 form with their own identity prefilled
+PASS: AUTH-H03 A Student lists only their own requests
+PASS: AUTH-H04 A Student cannot view another student's request (404)
+PASS: AUTH-H05 A Student can view their own request
+PASS: AUTH-H06 A Student cannot cancel another student's request
+PASS: AUTH-H07 Cancelling without a CSRF token is refused
+PASS: AUTH-H08 An Administrator sees all requests
+PASS: AUTH-H09 An Administrator may not submit a request (Student only)
+PASS: AUTH-H10 A Tutor is denied the request workflow
+PASS: AUTH-H11 A submitted request is attached to the signed-in student, not to forged form values
+PASS: AUTH-H12 A Student cancels their own Open request (record retained)
+PASS: AUTH-H13 Router hides internal path /tests/run-all.php
+PASS: AUTH-H13 Router hides internal path /scripts/init-db.php
+PASS: AUTH-H13 Router hides internal path /config/db.php
+PASS: AUTH-H13 Router hides internal path /database/setup-database.sql
+PASS: AUTH-H13 Router hides internal path /services/userService.php
+== Session inactivity timeout ==
+PASS: UM-09-H12 A fresh session works
+PASS: UM-09-H13 A session idle beyond the timeout is ended (timeout set to 3 s for this test)
+Results: 83 passed, 0 failed
+All suites passed
