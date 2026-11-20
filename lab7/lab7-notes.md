@@ -49,17 +49,23 @@ Part 4: Run the Application
 
 Part 5: Test the Student Workflow
 
-    *table*
-    *screenshot*
+![Test Flow Table](images4notes/part5.1.png)
+![Requests Screenshot](images4notes/part5.2.png)
 
 Part 6: Test the Administrator Workflow
 
-    1
-    2
-    3
-    4
-    5
-    *screenshot*
+    1 The authentication in this application is the logins created in the user table of the database. When a user is created they put in a username and a password which serve as their credentials for the system. Only people with a user acount are able to view the pages of the web application.
+
+    2 The authorization in this applicaiton is determined by what role each user has. The authorization you have limits the pages that you are able to view and what functions are available on the page. For example a student has different authorization than an administrator because they can only view requests they have submitted (not of other students). Also, only users with an administrator role are able to see the full list of users utilizing the web applicaiton.
+
+    3 An administrator is able to see all requests made by any student as well as all of the user accounts on the web application. A student has less access than an administrator because they can NOT see the full list of users on the application and they can only review tutoring requests they have created.
+
+    4 The biggest function that should be limited to administrators is viewing user accounts, especially updating a users account. This includes the manage-users.php and manage-user.php pages.
+
+    5 If an administrator tries to view a protected page (like manage-users.php) after logging out of the system, they ar immeditately redirected back to the login.php. This is exactly how we want the web applicaiton to work because it is only allowing confirmed authroized users to view protected pages.
+
+
+![Requests Screenshot](images4notes/part6.6.png)
 
 Part 7: Trace Registration and Login
 
